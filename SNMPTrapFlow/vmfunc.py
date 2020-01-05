@@ -40,6 +40,7 @@ class VmFunc(object):
         return json.loads(response)
 
 
+
     def getVMList(self):
         
         #処理
