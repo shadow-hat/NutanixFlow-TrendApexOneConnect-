@@ -16,11 +16,6 @@ class Flow:
     trend_val = ""
     msgval = []
 
-    #VM一覧取得
-    #vm_names = []
-    #vm_uuids = []
-    #vm_ips   = []
-
     idx  = 0
     idx2 = 0
 
@@ -66,9 +61,7 @@ class Flow:
                     
                     #IPからIndexを探す
                     try:
-                        #idx  = vmfunc.VmFunc.vm_ips.index(msgval[0])
                         idx = vmfunc.VmFunc.vm_macs[msgval[1].replace("-","").upper().replace(" ","")]
-
 
                     except Exception as e:
                         print("=== 該当のIPアドレスが存在しない（処理終了） ===")

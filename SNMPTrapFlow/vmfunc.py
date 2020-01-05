@@ -10,7 +10,7 @@ class VmFunc(object):
     vm_names = []
     vm_uuids = []
     vm_ips   = []
-    vm_macs  = {"D":"D"}
+    vm_macs  = {}
 
     pc_user = "admin"
     pc_password = "Password"
