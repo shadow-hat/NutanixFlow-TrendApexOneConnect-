@@ -1,5 +1,5 @@
 # NutanixFlow-TrendApexOneConnect-簡易解説
 
-##使い方
+## 使い方
 
-##著作権
+## 著作権
