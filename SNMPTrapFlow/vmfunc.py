@@ -69,41 +69,6 @@ class VmFunc(object):
             VmFunc.vm_names.append(i["vmName"])
             VmFunc.vm_uuids.append(i["uuid"])
 
-            if( False ):
-                if( len(i["ipAddresses"]) > 0 ):
-                    #Listで複数ある
-                    for j in i["ipAddresses"]:
-
-                        if not "169.254" in j:
-                            try:
-                                ipaddress.IPv6Address(j)
-                            
-                                #IPv6は対象外のため追加から外す
-                                if(flg):
-                                    flg = True
-                                else:
-                                    VmFunc.vm_ips.append("")
-                                    flg = True
-
-                            except Exception as e:
-                                #IPv6ではない
-
-                                if(flg):
-                                    VmFunc.vm_ips[len(VmFunc.vm_ips)-1] = j
-                                    flg = True
-                                else:
-                                    VmFunc.vm_ips.append(j)
-                                    flg = True
-                        else:
-                            if not flg:
-                                VmFunc.vm_ips.append(j)
-
-
-                else:
-                    VmFunc.vm_ips.append("")
-
-                flg = False
-
             #MACを取得
             for j in i["virtualNicIds"]:
                 VmFunc.vm_macs[j[-17:].replace(":","").upper().replace(" ","")] = cnt
