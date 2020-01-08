@@ -59,12 +59,12 @@ class Flow:
                     ans = vmfunc.VmFunc.getVMList("")
 
                     
-                    #IPからIndexを探す
+                    #MACからIndexを探す
                     try:
                         idx = vmfunc.VmFunc.vm_macs[msgval[1].replace("-","").upper().replace(" ","")]
 
                     except Exception as e:
-                        print("=== 該当のIPアドレスが存在しない（処理終了） ===")
+                        print("=== 該当のMACアドレスが存在しない（処理終了） ===")
                         break
                 
                     
